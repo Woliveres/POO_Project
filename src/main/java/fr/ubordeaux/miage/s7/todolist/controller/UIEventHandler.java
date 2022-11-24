@@ -1,8 +1,6 @@
 package fr.ubordeaux.miage.s7.todolist.controller;
 
-import fr.ubordeaux.miage.s7.todolist.controller.state.Action;
 import fr.ubordeaux.miage.s7.todolist.model.Model;
-import fr.ubordeaux.miage.s7.todolist.model.TaskCategory;
 import fr.ubordeaux.miage.s7.todolist.view.View;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -34,7 +32,9 @@ public class UIEventHandler implements EventHandler<Event> {
 
 		Object source = event.getSource();
 		if (source instanceof MenuItem) {
-			id = ((MenuItem) source).getId();
+			id = ((MenuItem) source).getText();
+			//controller.setCurrentState(controller.getCurrentState());
+
 
 		} else if (source instanceof Button) {
 			id = ((Button) source).getId();
@@ -50,7 +50,9 @@ public class UIEventHandler implements EventHandler<Event> {
 		try {
 			if (id != null) {
 				System.out.println("*** unimplemented case:  UIEventHandler.java(52)");
+				//affiche la fenetre d'edition en fonction de l'id de l'element cliqué
 
+				//view.showModalWindow(id);
 			}
 			model.notifyAllObservers();
 

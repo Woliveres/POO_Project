@@ -14,7 +14,7 @@ public abstract class State {
 	
 	public abstract States getType();
 
-	public abstract void handle(Controller controller, Action proceeds) throws Exception;
+	public abstract void handle(Controller controller, Action action) throws Exception;
 
 	@Override
 	public String toString() {

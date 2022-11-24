@@ -24,10 +24,12 @@ public class Controller implements IController {
 	private State currentState;
 
 	public Controller(Stage stage) throws Exception {
+		currentState = new InitState();
 		model = new Model();
 		view = new View(stage);
 		view.init(this);
 		view.show();
+		view.setStateLabel(currentState.toString());
 		model.attach(this);
 		model.notifyAllObservers();
 	}
@@ -43,7 +45,7 @@ public class Controller implements IController {
 		switch (currentState.getType()) {
 
 		default:
-			System.out.println("*** unimplemented case");
+
 			break;
 
 		}
