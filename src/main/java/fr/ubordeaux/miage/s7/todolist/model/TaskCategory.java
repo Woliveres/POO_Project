@@ -3,7 +3,7 @@ package fr.ubordeaux.miage.s7.todolist.model;
 public enum TaskCategory {
 
 	URGENCE_VITALE(Priority.HIGH),
-	//on pourra rajouter urgence médicale
+	URGENCE_MEDICALE(Priority.HIGH),
 	CONSULTATION_MEDICALE(Priority.MEDIUM),
 	EXAMEN(Priority.LOW);
 

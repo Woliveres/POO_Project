@@ -31,7 +31,7 @@ public class Model implements Observable {
 		// - La capacité initiale de 31 (elle augmentera automatiquement si besoin)
 		// - La comparaison appliquée entre deux tâches
 		tasks = new PriorityQueue<Task>(new TaskComparator<Task>());
-		tasks.add(new TaskExamen(List.of(new String[]{"bonjour", "je suis william", "j'ai 35 ans"})));
+		tasks.add(new TaskExamenMedicale(List.of(new String[]{"bonjour", "je suis william", "j'ai 35 ans"})));
 
 	}
 

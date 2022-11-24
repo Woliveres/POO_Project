@@ -2,10 +2,10 @@ package fr.ubordeaux.miage.s7.todolist.controller.state;
 
 import fr.ubordeaux.miage.s7.todolist.controller.Controller;
 
-public class InitState extends State{
+public class RecordState extends State {
     @Override
     public States getType() {
-        return States.INIT_STATE;
+        return States.RECORD_STATE;
     }
 
     @Override
@@ -13,12 +13,9 @@ public class InitState extends State{
         switch (action){
             default:
                 throw new Exception();
-            case SELECT_ACTION:
+            case OK_ACTION:
                 //faire un singleton pour ne pas le créer dans tout les cas
-                controller.setCurrentState(new EditState());
-                break;
-            case PROCEED_ACTION:
-                controller.setCurrentState(new ProceedState());
+                controller.setCurrentState(new InitState());
                 break;
         }
     }

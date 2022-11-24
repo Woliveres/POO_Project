@@ -44,9 +44,9 @@ public class Controller implements IController {
 
 		switch (currentState.getType()) {
 
-		default:
+			default:
 
-			break;
+				break;
 
 		}
 
