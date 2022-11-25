@@ -3,7 +3,7 @@ package fr.ubordeaux.miage.s7.todolist.controller.state;
 import fr.ubordeaux.miage.s7.todolist.controller.Controller;
 
 public abstract class State {
-
+	//enum dans classe discutable
 	public enum States{
 		INIT_STATE, 
 		ERROR_STATE, 

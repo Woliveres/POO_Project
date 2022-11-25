@@ -2,12 +2,11 @@ package fr.ubordeaux.miage.s7.todolist.controller.state;
 
 import fr.ubordeaux.miage.s7.todolist.controller.Controller;
 
-public class InitState extends State{
-
-    private static InitState instance = new InitState();
+public class ErrorState extends State{
+    private static ErrorState instance = new ErrorState();
     @Override
     public States getType() {
-        return States.INIT_STATE;
+        return States.ERROR_STATE;
     }
     public static State getInstance() {
         return instance;
@@ -17,11 +16,8 @@ public class InitState extends State{
         switch (action){
             default:
                 throw new Exception();
-            case SELECT_ACTION:
-                controller.setCurrentState(EditState.getInstance());
-                break;
-            case PROCEED_ACTION:
-                controller.setCurrentState(ProceedState.getInstance());
+            case OK_ACTION:
+                controller.setCurrentState(InitState.getInstance());
                 break;
         }
     }
