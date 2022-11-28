@@ -20,6 +20,7 @@ public class TaskFactory {
             case URGENCE_VITALE:
                 return (Task) new TaskUrgenceVitale(this.topics);
             case URGENCE_MEDICALE:
+                //pas sur du cast
                 return (Task) new TaskUrgenceMedicale(this.topics);
             case CONSULTATION_MEDICALE:
                 return (Task) new TaskConsultationMedicale(this.topics);
