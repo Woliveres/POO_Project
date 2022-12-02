@@ -15,8 +15,8 @@ public class TaskFactory {
 
     private List<String> topics;
 
-    public Task createTask( TaskCategory category) {
-        switch (taskCategory) {
+    public Task createTask() {
+        switch (this.taskCategory) {
             case URGENCE_VITALE:
                 return (Task) new TaskUrgenceVitale(this.topics);
             case URGENCE_MEDICALE:

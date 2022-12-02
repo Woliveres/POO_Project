@@ -37,18 +37,65 @@ public class Controller implements IController {
 	// Envoie des messages à la vue
 	// pour que celle-ci soit conforme au modèle
 	public void update(Observable observable) throws Exception {
-		
+
+		ErrorState errorState;
+		Task task;
 		Model modelTodoList = (Model) observable;
 	
-		view.setStateLabel("currentState: " + this.currentState);
+		this.view.setStateLabel("currentState: " + this.currentState);
+
+		System.out.print(getCurrentState().getType().ordinal());
 
 		switch (currentState.getType()) {
 
+			case INIT_STATE:
+				this.view.hideModalWindow();
+				this.view.hideModalMessageWindow();
+				this.view.disableMenu_btn(false);
+				if(model.getTaskDescriptions().size()>0){
+					this.view.disableProceed_btn(false);
+					this.view.setTextTodo_ta(model.getTaskDescriptions());
+				}else {
+					this.view.disableProceed_btn(true);
+				}
+				return;
+			case ERROR_STATE:
+				errorState = (ErrorState)this.model.getCurrentState();
+				this.view.showModalMessageWindow("Erreur", errorState.getErrorMessage());
+				return;
+
+			case EDIT_STATE:
+				//this.view.hideModalWindow();
+				this.view.disableMenu_btn(true);
+				this.view.disableProceed_btn(true);
+				this.view.showModalWindow(this.model.getTaskFactory().name());
+				return;
+
+			case RECORD_STATE:
+				this.view.hideModalWindow();
+				this.view.disableMenu_btn(false);
+				if(model.getTopics() != null){
+					for (String str : model.getTopics()){
+						this.model.getTaskFactory().addTopic(str);
+					}
+				}
+				task = this.model.getTaskFactory().createTask();
+				this.model.push(task);
+				this.view.showModalMessageWindow("Message", "Enregistrée : " + task.description());
+				return;
+
+			case PROCEED_STATE:
+				this.model.pop();
+				this.view.setTextTodo_ta(model.getTaskDescriptions());
+				this.view.showModalMessageWindow("Tâche en cours de traitement :", this.model.getCurrentTask().description());
+				this.view.hideModalWindow();
+				this.view.disableMenu_btn(false);
+				return;
+
 			default:
-
 				break;
-
 		}
+		this.view.showModalMessageWindow("Erreur", "Erreur java");
 
 	}
 

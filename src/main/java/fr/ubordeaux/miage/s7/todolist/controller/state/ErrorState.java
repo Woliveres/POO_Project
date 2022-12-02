@@ -1,14 +1,17 @@
 package fr.ubordeaux.miage.s7.todolist.controller.state;
 
 import fr.ubordeaux.miage.s7.todolist.controller.Controller;
+import fr.ubordeaux.miage.s7.todolist.model.Model;
 
 public class ErrorState extends State{
     private static ErrorState instance = new ErrorState();
+    private String message;
     @Override
     public States getType() {
         return States.ERROR_STATE;
     }
-    public static State getInstance() {
+    public static State getInstance(String paramString) {
+        instance.message = paramString;
         return instance;
     }
     @Override
@@ -20,5 +23,9 @@ public class ErrorState extends State{
                 controller.setCurrentState(InitState.getInstance());
                 break;
         }
+    }
+
+    public String getErrorMessage() {
+    return this.message;
     }
 }

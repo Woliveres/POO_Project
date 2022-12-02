@@ -50,7 +50,7 @@ public class Model implements Observable {
 
 	@Override
 	public void attach(IController observer) {
-		System.out.println("*** unimplemented case: Model.java(39)");
+		this.observers.add(observer);
 	}
 
 	@Override

@@ -1,6 +1,7 @@
 package fr.ubordeaux.miage.s7.todolist.controller.state;
 
 import fr.ubordeaux.miage.s7.todolist.controller.Controller;
+import fr.ubordeaux.miage.s7.todolist.model.Model;
 
 public class EditState extends State {
     private static EditState instance = new EditState();
