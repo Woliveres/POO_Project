@@ -19,6 +19,7 @@ public class RecordState extends State {
                 throw new Exception();
             case OK_ACTION:
                 controller.setCurrentState(InitState.getInstance());
+
                 break;
         }
     }

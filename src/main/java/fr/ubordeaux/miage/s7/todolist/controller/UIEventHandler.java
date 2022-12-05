@@ -53,7 +53,6 @@ public class UIEventHandler implements EventHandler<Event> {
 
 		try {
 			if (id != null) {
-				System.out.println("*** unimplemented case:  UIEventHandler.java(52)");
 				//affiche la fenetre d'edition en fonction de l'id de l'element cliqué
 
 				//view.showModalWindow(id);

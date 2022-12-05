@@ -15,11 +15,14 @@ public class ProceedState extends State {
     @Override
     public void handle(Controller controller, Action action) throws Exception {
         switch (action){
-            default:
-                throw new Exception();
             case OK_ACTION:
                 controller.setCurrentState(InitState.getInstance());
                 break;
+            case ERROR_ACTION:
+                controller.setCurrentState(ErrorState.getInstance("Error proceed_state"));
+            default:
+
+
         }
     }
 }

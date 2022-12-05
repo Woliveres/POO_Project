@@ -72,6 +72,8 @@ public class Controller implements IController {
 				return;
 
 			case RECORD_STATE:
+				try{
+
 				this.view.hideModalWindow();
 				this.view.disableMenu_btn(false);
 				if(model.getTopics() != null){
@@ -83,6 +85,12 @@ public class Controller implements IController {
 				this.model.push(task);
 				this.view.showModalMessageWindow("Message", "Enregistrée : " + task.description());
 				return;
+				}
+				catch(TaskException e){
+
+					//PASSER l'information au model
+					this.model.getCurrentState().handle(this, Action.ERROR_ACTION);
+				}
 
 			case PROCEED_STATE:
 				this.model.pop();
