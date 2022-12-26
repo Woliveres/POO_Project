@@ -1,6 +1,6 @@
 package fr.ubordeaux.miage.s7.todolist.controller;
 
-import fr.ubordeaux.miage.s7.todolist.controller.state.*;
+import fr.ubordeaux.miage.s7.todolist.model.state.*;
 import fr.ubordeaux.miage.s7.todolist.model.*;
 import fr.ubordeaux.miage.s7.todolist.view.*;
 import javafx.stage.Stage;

@@ -1,13 +1,12 @@
-package fr.ubordeaux.miage.s7.todolist.controller.state;
+package fr.ubordeaux.miage.s7.todolist.model.state;
 
 import fr.ubordeaux.miage.s7.todolist.controller.Controller;
-import fr.ubordeaux.miage.s7.todolist.model.Model;
 
-public class RecordState extends State {
-    private static RecordState instance = new RecordState();
+public class EditState extends State {
+    private static EditState instance = new EditState();
     @Override
     public States getType() {
-        return States.RECORD_STATE;
+        return States.EDIT_STATE;
     }
     public static State getInstance() {
         return instance;
@@ -15,12 +14,14 @@ public class RecordState extends State {
     @Override
     public void handle(Controller controller, Action action) throws Exception {
         switch (action){
-            default:
-                throw new Exception();
-            case OK_ACTION:
+            case CANCEL_ACTION:
                 controller.setCurrentState(InitState.getInstance());
-
                 break;
+            case RECORD_ACTION:
+                controller.setCurrentState(RecordState.getInstance());
+                break;
+            default :
+                throw new Exception("");
         }
     }
 }

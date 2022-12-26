@@ -1,7 +1,6 @@
-package fr.ubordeaux.miage.s7.todolist.controller.state;
+package fr.ubordeaux.miage.s7.todolist.model.state;
 
 import fr.ubordeaux.miage.s7.todolist.controller.Controller;
-import fr.ubordeaux.miage.s7.todolist.model.Model;
 
 public class ProceedState extends State {
     private static ProceedState instance = new ProceedState();

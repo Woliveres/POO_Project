@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Vector;
 import fr.ubordeaux.miage.s7.todolist.controller.IController;
-import fr.ubordeaux.miage.s7.todolist.controller.state.InitState;
-import fr.ubordeaux.miage.s7.todolist.controller.state.State;
+import fr.ubordeaux.miage.s7.todolist.model.state.InitState;
+import fr.ubordeaux.miage.s7.todolist.model.state.State;
 import javafx.collections.ObservableList;
 
 public class Model implements Observable {

@@ -1,8 +1,7 @@
 package fr.ubordeaux.miage.s7.todolist.controller;
 
-import fr.ubordeaux.miage.s7.todolist.controller.state.Action;
+import fr.ubordeaux.miage.s7.todolist.model.state.Action;
 import fr.ubordeaux.miage.s7.todolist.model.Model;
-import fr.ubordeaux.miage.s7.todolist.model.Task;
 //import fr.ubordeaux.miage.s7.todolist.model.TaskFactory;
 import fr.ubordeaux.miage.s7.todolist.view.View;
 import javafx.event.Event;
